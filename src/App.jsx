@@ -13,35 +13,29 @@ const App = () => {
   };
   return (
     <>
-      <Box
-        bgcolor={"background.default"}
-        color={"text.primary"}
-        sx={{minHeight: '100vh'}}
-      >
-        <AppBar position="static">
-          <Toolbar variant="dense">
-          <Box display="flex" justifyContent="center" width="100%">
-            <Typography variant="h4">WeatherReporter</Typography>
-          </Box>
-          </Toolbar>
-        </AppBar>
+      <AppBar position="static">
+        <Toolbar variant="dense">
+        <Box display="flex" justifyContent="center" width="100%">
+          <Typography variant="h4">WeatherReporter</Typography>
+        </Box>
+        </Toolbar>
+      </AppBar>
 
-        <TabContext value={value}>
-          <Box 
-            sx={{ 
-              borderBottom: 1, 
-              borderColor: 'divider' 
-            }}
-          >
-            <TabList onChange={handleChange} aria-label="Forecast tabs" variant="fullWidth">
-              <Tab label="Zaporizhzhia" value="1" />
-              <Tab label="Kyiv" value="2" />
-            </TabList>
-          </Box>
-          <TabPanel value="1"><Forecast lat="47.8508" lon="35.1183"/></TabPanel>
-          <TabPanel value="2"><Forecast lat="50.45466" lon="30.5238"/></TabPanel>
-        </TabContext>
-      </Box>
+      <TabContext value={value}>
+        <Box 
+          sx={{ 
+            borderBottom: 1, 
+            borderColor: 'divider' 
+          }}
+        >
+          <TabList onChange={handleChange} aria-label="Forecast tabs" variant="fullWidth">
+            <Tab label="Zaporizhzhia" value="1" />
+            <Tab label="Kyiv" value="2" />
+          </TabList>
+        </Box>
+        <TabPanel value="1"><Forecast lat="47.8508" lon="35.1183"/></TabPanel>
+        <TabPanel value="2"><Forecast lat="50.45466" lon="30.5238"/></TabPanel>
+      </TabContext>
     </>
   )
 }
